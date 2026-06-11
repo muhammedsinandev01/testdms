@@ -51,7 +51,7 @@ export default function Home() {
   };
 
   return (
-    <div className="relative min-h-screen bg-[#0A101E] overflow-x-hidden selection:bg-accent-gold selection:text-white">
+    <div className="relative min-h-screen bg-[#0A101E] overflow-x-clip selection:bg-accent-gold selection:text-white">
       <div className="relative z-10">
         <Navbar onOpenConsultation={() => handleOpenConsultation()} />
         

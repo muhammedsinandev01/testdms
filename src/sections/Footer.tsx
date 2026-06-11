@@ -28,11 +28,11 @@ export default function Footer() {
           {/* Brand Col */}
           <div className="md:col-span-5 flex flex-col items-start">
             <Image
-              src="/img/logo.png"
+              src="/img/logo_v2.png"
               alt="Dock Media School Logo"
-              width={180}
-              height={50}
-              className="w-auto h-8 md:h-10 object-contain mb-6"
+              width={250}
+              height={100}
+              className="w-auto h-16 md:h-24 object-contain mb-6"
             />
             <p className="text-sm text-white/50 leading-relaxed max-w-sm mb-6">
               Dock Media School is a professional media institution built inside the active industry, providing real-world capabilities in digital marketing, content creation, video production, and strategy.
@@ -171,7 +171,6 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} Dock Media School. All Rights Reserved.
           </p>
           <div className="flex items-center space-x-6">
-            <span className="text-xs text-white/30">Theme Inspired by Dock Worldwide</span>
             <span className="text-xs text-white/30">Built Inside the Industry</span>
           </div>
         </div>

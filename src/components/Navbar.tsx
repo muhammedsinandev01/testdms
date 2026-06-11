@@ -48,19 +48,19 @@ export default function Navbar({ onOpenConsultation }: NavbarProps) {
     <nav
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
         isScrolled
-          ? "py-4 bg-[#0A101E]/80 backdrop-blur-md border-b border-white/5 shadow-lg shadow-black/20"
-          : "py-6 bg-transparent"
+          ? "py-1.5 md:py-2 bg-[#0A101E]/80 backdrop-blur-md border-b border-white/5 shadow-lg shadow-black/20"
+          : "py-2.5 md:py-3.5 bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
         {/* Logo */}
         <a href="#hero" onClick={(e) => handleLinkClick(e, "#hero")} className="relative z-55 flex items-center">
           <Image
-            src="/img/logo.png"
+            src="/img/logo_v2.png"
             alt="Dock Media School Logo"
-            width={180}
-            height={50}
-            className="w-auto h-8 md:h-10 object-contain hover:scale-105 transition-transform duration-300"
+            width={250}
+            height={100}
+            className="w-auto h-[48px] md:h-[58px] object-contain hover:scale-105 transition-transform duration-300"
             priority
           />
         </a>
