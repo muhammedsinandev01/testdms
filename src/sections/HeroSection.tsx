@@ -87,12 +87,26 @@ export default function HeroSection({ onOpenConsultation }: HeroSectionProps) {
         let offsetX = 0;
         let offsetY = 0;
 
-        if (imgRatio > canvasRatio) {
-          drawWidth = canvas.height * imgRatio;
-          offsetX = (canvas.width - drawWidth) / 2;
+        const isMobile = window.innerWidth < 768;
+
+        if (isMobile) {
+          // Object-contain logic for mobile: fit the full widescreen image on screen
+          if (imgRatio > canvasRatio) {
+            drawHeight = canvas.width / imgRatio;
+            offsetY = (canvas.height - drawHeight) / 2;
+          } else {
+            drawWidth = canvas.height * imgRatio;
+            offsetX = (canvas.width - drawWidth) / 2;
+          }
         } else {
-          drawHeight = canvas.width / imgRatio;
-          offsetY = (canvas.height - drawHeight) / 2;
+          // Object-cover logic for desktop: fill the screen
+          if (imgRatio > canvasRatio) {
+            drawWidth = canvas.height * imgRatio;
+            offsetX = (canvas.width - drawWidth) / 2;
+          } else {
+            drawHeight = canvas.width / imgRatio;
+            offsetY = (canvas.height - drawHeight) / 2;
+          }
         }
 
         ctx.drawImage(img, offsetX, offsetY, drawWidth, drawHeight);
@@ -144,7 +158,7 @@ export default function HeroSection({ onOpenConsultation }: HeroSectionProps) {
       <section
         id="hero-animation"
         ref={sectionRef}
-        className="relative w-full bg-black h-[300vh]"
+        className="relative w-full bg-black h-[200vh] md:h-[300vh]"
       >
         <div ref={containerRef} className="sticky top-0 h-[100dvh] w-full overflow-hidden bg-black">
           <canvas
